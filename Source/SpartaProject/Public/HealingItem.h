@@ -7,13 +7,15 @@
 UCLASS()
 class SPARTAPROJECT_API AHealingItem : public ABaseItem
 {
-	GENERATED_BODY()
-	
+    GENERATED_BODY()
+
 public:
-	AHealingItem();
+        AHealingItem();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	float HealAmount;
-
-	virtual void ActivateItem(AActor* Activator) override;
+protected:
+    // È¸º¹·®
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
+    int32 HealAmount;
+    
+    virtual void ActivateItem(AActor* Activator) override;
 };
